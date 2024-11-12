@@ -19,9 +19,10 @@ const getHumanChoice = () => {
   return choice 
 }
 
-
 let humanScore = 0;
 let computerScore = 0;
+
+const playGame = () => {
 
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
@@ -30,18 +31,27 @@ const playRound = (humanChoice, computerChoice) => {
 
   if (humanChoice === computerChoice) {
     console.log("It's a tie, try your luck again!")
+    console.log(`Human Score:${humanScore} Computer Score ${computerScore}`)
+    
   }
  else if ((humanChoice === "ROCK" && computerChoice === "SCISSORS") ||
          (humanChoice === "PAPER" && computerChoice === "ROCK") ||
          (humanChoice === "SCISSORS" && computerChoice === "PAPER")) {
           console.log(`You win, ${humanChoice} beats ${computerChoice}`);
           humanScore++;
+          console.log(`Human Score:${humanScore} Computer Score ${computerScore}`)
          }
         else {
           console.log(`You lose, ${computerChoice} beats ${humanChoice}, computer wins`);
           computerScore++;
+          console.log(`Human Score:${humanScore} Computer Score ${computerScore}`)
+
         }
 };
 
-
 playRound(humanChoice, computerChoice)
+
+}
+
+playGame()
+
