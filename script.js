@@ -1,4 +1,4 @@
-const getComputerChoice = () => {
+/*const getComputerChoice = () => {
   const randomNum = Math.floor(Math.random() * 3) + 1;
 
   if (randomNum === 1){
@@ -24,6 +24,7 @@ let computerScore = 0;
 
 const playGame = () => {
 
+  for(i = 0; i < 5; i++){
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
 
@@ -50,8 +51,12 @@ const playRound = (humanChoice, computerChoice) => {
 };
 
 playRound(humanChoice, computerChoice)
-
+  }
 }
 
 playGame()
+*/
+
+
+
 
