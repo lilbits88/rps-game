@@ -1,5 +1,8 @@
-let humanScore = 0;
+let playerScore = 0;
 let computerScore = 0;
+
+const playerScoreElement = document.getElementById("player-score");
+const computerScoreElement = document.getElementById("computer-score");
 
 const getComputerChoice = () => {
   const randomNum = Math.floor(Math.random() * 3) + 1;
@@ -13,21 +16,33 @@ const getComputerChoice = () => {
   }
 };
 
-const playRound = (humanChoice, computerChoice) => {
+const updateScore = () => {
+  playerScoreElement.textContent = playerScore;
+  computerScoreElement.textContent = computerScore;
+}
+
+const playRound = (humanChoice) => {
+  const computerChoice = getComputerChoice();
+
   if (humanChoice === computerChoice) {
-    console.log("It's a tie, try your luck again!");
-    console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`);
+    document.getElementById('prompt').textContent = "It's a tie, try again"
   } else if (
     (humanChoice === "ROCK" && computerChoice === "SCISSORS") ||
     (humanChoice === "PAPER" && computerChoice === "ROCK") ||
     (humanChoice === "SCISSORS" && computerChoice === "PAPER")
   ) {
-    humanScore++;
+    playerScore++;
+    document.getElementById('prompt').textContent = "You win this round"
+
   } else {
     computerScore++;
+    document.getElementById('prompt').textContent = "You lose this round"
   }
+  updateScore();
 };
 
-getHumanChoice();
+document.getElementById("rock").addEventListener("click", () => playRound("ROCK"));
+document.getElementById("paper").addEventListener("click", () => playRound("PAPER"));
+document.getElementById("scissors").addEventListener("click", () => playRound("SCISSORS"));
 
 
