@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
 const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
 
@@ -39,6 +40,12 @@ const playRound = (humanChoice) => {
     document.getElementById('prompt').textContent = "You lose this round"
   }
   updateScore();
+  if (playerScore === 5){
+    document.getElementById('prompt').textContent = "You win the Game!"
+  }
+  if (computerScore === 5) {
+    document.getElementById('prompt').textContent = "You lost to the Computer"
+  }
 };
 
 document.getElementById("rock").addEventListener("click", () => playRound("ROCK"));
