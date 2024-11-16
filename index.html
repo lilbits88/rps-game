@@ -4,13 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+  <link rel="stylesheet" href="styles.css">
   <title>RPS 🪨 📄 ✂️</title>
 </head>
 <body>
-  <div id="container"></div>
-  <!-- the HTML file -->
-<button id="btn">Click Me</button>
-
+  <h1>Rock, Paper, Scissors</h1>
+  <div id="game-message">
+    <p id="prompt">First to 5 Wins!</p>
+  </div>
+  <div id="player-buttons">
+    <h2>Player's Choice</h2>
+    <button id="rock" value="ROCK">Rock</button>
+    <button id="paper" value="PAPER">Paper</button>
+    <button id="scissors" value="SCISSORS">Scissors</button>
+  </div>
+  <div id="score-board">
+    <h2>Scores</h2>
+    <p>Player Score: <span id="player-score">0</span></p>
+    <p>Computer Score: <span id="computer-score">0</span></p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
